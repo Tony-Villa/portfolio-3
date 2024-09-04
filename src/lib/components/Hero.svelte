@@ -1,17 +1,21 @@
 <script lang="ts">
+	import { svgStats } from "$lib/helpers/svgStats";
+	import gsap from "gsap";
 
   let hero: HTMLElement | undefined = $state()
   let mouseX: number = $state(0)
   let mouseY: number = $state(0)
   let mouseInHero: boolean = $state(true)
-  let activeCircleRadius = 250
+  let screenSize: keyof typeof svgStats.bl.circle.size = $derived(hero && hero.clientWidth > 800 ? 'regular' : 'mobile' || 'regular')
 
-  let autoCircleX: number = $state();
-  let autoCircleY: number = $state();
+  let activeCircleRadius = $derived(svgStats.active.circle.size[screenSize])
+
+  let autoCircleX: number = $state(0 + activeCircleRadius);
+  let autoCircleY: number = $state(0 + Math.round(activeCircleRadius / 3));
 
   let roamingCircle = $derived({
-    x: mouseInHero ? mouseX - 100 : (hero ? hero?.clientWidth / 2 : 0),
-    y: mouseInHero ? mouseY - 200 : (hero ? hero?.clientHeight / 2 : 0),
+    x: mouseInHero ? mouseX - 100 : autoCircleX,
+    y: mouseInHero ? mouseY - 200 : autoCircleY,
   })
 
   let colors = {
@@ -21,20 +25,54 @@
     br: "#FFB2EF",
     active: "#FF7A5C",
   }
+
   
   function getMouseCoords(e: MouseEvent) {
     mouseX = e.clientX
     mouseY = e.clientY
   }
 
-  // $effect(() => {
-  //   if(hero) {
-  //     autoCircleX = hero?.clientWidth + ((autoCircleX / 100) * (hero.clientWidth - 0))
-  //   }
-  // })
+  $effect(() => {
+    if(hero && !mouseInHero) {
+      let xInterp = gsap.utils.interpolate(0 + activeCircleRadius, hero.clientWidth - activeCircleRadius)
+      let yInterp = gsap.utils.interpolate(0 + Math.round(activeCircleRadius / 3), hero.clientHeight - activeCircleRadius)
 
+      const timeline = gsap.timeline({})
 
+      function xRight() {
+        const tl = gsap.timeline()
+        tl.to({}, {
+          duration: 6,
+          ease: "circ.inOut",
+          onUpdate() {
+            autoCircleX = Math.round(xInterp(this.ratio))
+          },
+        })
 
+        return tl
+      }
+
+      function yDown() {
+        const tl = gsap.timeline()
+        tl.to({}, {
+          duration: 6,
+          ease: "circ.inOut",
+          onUpdate() {
+            autoCircleY = Math.round(yInterp(this.ratio))
+          },
+        })
+
+        return tl
+      }
+
+      timeline
+        .add(xRight())
+        .add(yDown())
+        .add(xRight().reverse())
+        .add(yDown().reverse())
+        .repeat(-1)
+    }
+  })
 </script>
     
 <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -57,11 +95,11 @@
 
     <defs>
       <g id="circles">
-        <circle cx="10%" cy="5%" r="250" fill={colors.tl} fill-opacity="0.5" />
-        <circle cx="77%" cy="7%" r="250" fill={colors.tr} fill-opacity="0.5" />
-        <circle cx="20%" cy="95%" r="450" fill={colors.bl} fill-opacity="0.5" />
-        <circle cx="88%" cy="85%" r="350" fill={colors.br} fill-opacity="0.5" />
-        <circle id="active" cx={roamingCircle.x} cy={roamingCircle.y} r={activeCircleRadius} fill={colors.active} fill-opacity="0.5" />
+        <circle id="circle-tl" cx={svgStats.tl.circle.pos[screenSize].cx} cy={svgStats.tl.circle.pos[screenSize].cy} r={svgStats.tl.circle.size[screenSize]} fill={svgStats.tl.circle.color} fill-opacity="0.5" />
+        <circle id="circle-tr" cx={svgStats.tr.circle.pos[screenSize].cx} cy={svgStats.tr.circle.pos[screenSize].cy} r={svgStats.tr.circle.size[screenSize]} fill={svgStats.tr.circle.color}  fill-opacity="0.5" />
+        <circle id="circle-bl" cx={svgStats.bl.circle.pos[screenSize].cx} cy={svgStats.bl.circle.pos[screenSize].cy} r={svgStats.bl.circle.size[screenSize]} fill={svgStats.bl.circle.color}  fill-opacity="0.5" />
+        <circle id="circle-br" cx={svgStats.br.circle.pos[screenSize].cx} cy={svgStats.br.circle.pos[screenSize].cy} r={svgStats.br.circle.size[screenSize]} fill={svgStats.br.circle.color}  fill-opacity="0.5" />
+        <circle id="active" cx={roamingCircle.x} cy={roamingCircle.y} r={svgStats.active.circle.size[screenSize]} fill={colors.active} fill-opacity="0.5" />
       </g>
     </defs>
     <defs>
