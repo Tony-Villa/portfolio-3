@@ -8,7 +8,7 @@ export const svgStats = {
       pos: {
         regular: {
           cx: '10%',
-          cy: '5%'
+          cy: '15%'
         },
         mobile: {
           cx: '10%',
@@ -39,7 +39,7 @@ export const svgStats = {
       pos: {
         regular: {
           cx: '77%',
-          cy: '7%'
+          cy: '17%'
         },
         mobile: {
           cx: '87%',
@@ -70,7 +70,7 @@ export const svgStats = {
     pos: {
       regular: {
         cx: '20%',
-        cy: '95%'
+        cy: '105%'
       },
       mobile: {
         cx: '20%',
@@ -112,7 +112,7 @@ export const svgStats = {
       pos: {
         regular: {
           cx: '80%',
-          cy: '80%'
+          cy: '70%'
         },
         mobile: {
           cx: '75%',
@@ -130,7 +130,7 @@ export const svgStats = {
       regular: {
         cx: '10%',
         cy: '5%'
-      }
+      } 
     },
     color: "#FF7A5C"}
   },

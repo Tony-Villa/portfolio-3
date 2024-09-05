@@ -14,8 +14,8 @@
   let autoCircleY: number = $state(0 + Math.round(activeCircleRadius / 3));
 
   let roamingCircle = $derived({
-    x: mouseInHero ? mouseX - 100 : autoCircleX,
-    y: mouseInHero ? mouseY - 200 : autoCircleY,
+    x: mouseInHero ? mouseX - 75 : autoCircleX,
+    y: mouseInHero ? mouseY - 50    : autoCircleY,
   })
 
   let colors = {
@@ -36,7 +36,7 @@
     if(hero && !mouseInHero && activeCircleRadius) {
 
       const xStart = screenSize === 'regular' ? 0 + activeCircleRadius : 0 + Math.round(activeCircleRadius/1.75 + 0)
-      const yStart = screenSize === 'regular' ? 0 + Math.round(activeCircleRadius / 3) : 0;
+      const yStart = screenSize === 'regular' ? 0 + activeCircleRadius /2  : 0;
 
       const xEnd = screenSize === 'regular' ? hero.clientWidth - activeCircleRadius : hero.clientWidth - activeCircleRadius;
       const yEnd = screenSize === 'regular' ? hero.clientHeight - activeCircleRadius : hero.clientHeight - activeCircleRadius * 2;
@@ -48,7 +48,9 @@
       });
 
       let xInterp = gsap.utils.interpolate(xStart, xEnd)
+      let xInterpReverse = gsap.utils.interpolate(xEnd, xStart)
       let yInterp = gsap.utils.interpolate(yStart, yEnd)
+      let yInterpReverse = gsap.utils.interpolate(yEnd, yStart)
 
       const timeline = gsap.timeline({})
 
@@ -59,6 +61,21 @@
           ease: "circ.inOut",
           onUpdate() {
             autoCircleX = Math.round(xInterp(this.ratio))
+            autoCircleY = yStart
+          },
+        })
+
+        return tl
+      }
+
+      function xLeft() {
+        const tl = gsap.timeline()
+        tl.to({}, {
+          duration: 6,
+          ease: "circ.inOut",
+          onUpdate() {
+            autoCircleX = Math.round(xInterpReverse(this.ratio))
+            autoCircleY = yEnd
           },
         })
 
@@ -72,17 +89,33 @@
           ease: "circ.inOut",
           onUpdate() {
             autoCircleY = Math.round(yInterp(this.ratio))
+            autoCircleX = xEnd
           },
         })
 
         return tl
       }
 
+      function yUp() {
+        const tl = gsap.timeline()
+        tl.to({}, {
+          duration: 6,
+          ease: "circ.inOut",
+          onUpdate() {
+            autoCircleY = Math.round(yInterpReverse(this.ratio))
+            autoCircleX = xStart
+          },
+        })
+
+        return tl
+      }
+
+
       timeline
         .add(xRight())
         .add(yDown())
-        .add(xRight().reverse())
-        .add(yDown().reverse())
+        .add(xLeft())
+        .add(yUp())
         .repeat(-1)
     }
   })
@@ -101,9 +134,7 @@
   <svg xmlns="http://www.w3.org/2000/svg" height={hero?.clientHeight} width={hero?.clientWidth} version="1.1">
     <defs>
       <mask id="reveal">
-        <g transform="translate(0 140)">
-          <circle id="mask-circle" cx={roamingCircle.x} cy={roamingCircle.y} r={activeCircleRadius} fill={colors.active} fill-opacity="1" />
-        </g>
+        <circle id="mask-circle" cx={roamingCircle.x} cy={roamingCircle.y} r={activeCircleRadius} fill={colors.active} fill-opacity="1" />
       </mask>
     </defs>
 
@@ -125,7 +156,6 @@
     </defs>
     <use
     href="#circles"
-    transform="translate(0 140)"
     filter="url(#gooey)" />
 
     <!-- Top Left -->
