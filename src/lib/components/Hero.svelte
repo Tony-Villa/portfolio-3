@@ -33,9 +33,22 @@
   }
 
   $effect(() => {
-    if(hero && !mouseInHero) {
-      let xInterp = gsap.utils.interpolate(0 + activeCircleRadius, hero.clientWidth - activeCircleRadius)
-      let yInterp = gsap.utils.interpolate(0 + Math.round(activeCircleRadius / 3), hero.clientHeight - activeCircleRadius)
+    if(hero && !mouseInHero && activeCircleRadius) {
+
+      const xStart = screenSize === 'regular' ? 0 + activeCircleRadius : 0 + Math.round(activeCircleRadius/1.75 + 0)
+      const yStart = screenSize === 'regular' ? 0 + Math.round(activeCircleRadius / 3) : 0;
+
+      const xEnd = screenSize === 'regular' ? hero.clientWidth - activeCircleRadius : hero.clientWidth - activeCircleRadius;
+      const yEnd = screenSize === 'regular' ? hero.clientHeight - activeCircleRadius : hero.clientHeight - activeCircleRadius * 2;
+
+      console.log({
+        sectionHeight: hero?.clientHeight,
+        yStart,
+        yEnd
+      });
+
+      let xInterp = gsap.utils.interpolate(xStart, xEnd)
+      let yInterp = gsap.utils.interpolate(yStart, yEnd)
 
       const timeline = gsap.timeline({})
 
@@ -73,6 +86,7 @@
         .repeat(-1)
     }
   })
+
 </script>
     
 <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -115,7 +129,7 @@
     filter="url(#gooey)" />
 
     <!-- Top Left -->
-    <text class="font-black" x="5%" y="15%" fill="#000" font-size=40 mask="url(#reveal)" >
+    <text class="font-black" x={svgStats.tl.text.pos[screenSize].cx} y={svgStats.tl.text.pos[screenSize].cy} fill="#000" font-size={svgStats.fontSize[screenSize]} mask="url(#reveal)" >
       <tspan dy="1.2em" x="10" dx="1em">
         I'm a
       </tspan>
@@ -125,7 +139,7 @@
     </text>
 
     <!-- Top Right -->
-    <text class="font-black" x="5%" y="17%" fill="#000" font-size=40 mask="url(#reveal)">
+    <text class="font-black" x={svgStats.tr.text.pos[screenSize].cx} y={svgStats.tr.text.pos[screenSize].cy} fill="#000" font-size={svgStats.fontSize[screenSize]} mask="url(#reveal)">
       <tspan dy="1.2em" x="65%" dx="1em">
         I'm a
       </tspan>
@@ -135,7 +149,7 @@
     </text>
 
     <!-- Bot Left -->
-    <text class="font-black z-10" x="35%" y="75%" fill="#000" font-size=40 mask="url(#reveal)">
+    <text class="font-black z-10" x={svgStats.bl.text.pos[screenSize].cx} y={svgStats.bl.text.pos[screenSize].cy} fill="#000" font-size={svgStats.fontSize[screenSize]} mask="url(#reveal)">
       <tspan dy="1.2em" x="10%" dx="1em">
         I'm an
       </tspan>
@@ -145,7 +159,7 @@
     </text>
 
     <!-- Bot Right -->
-    <text class="font-black" x="5%" y="75%" fill="#000" font-size=40 mask="url(#reveal)">
+    <text class="font-black" x={svgStats.br.text.pos[screenSize].cx} y={svgStats.br.text.pos[screenSize].cy} fill="#000" font-size={svgStats.fontSize[screenSize]} mask="url(#reveal)">
       <tspan dy="1.2em" x="75%" dx="1em">
         I'm a
       </tspan>

@@ -3,7 +3,7 @@ export const svgStats = {
       circle: {
         size: {
         regular: 250,
-        mobile: 180,
+        mobile: 150,
       },
       pos: {
         regular: {
@@ -12,10 +12,22 @@ export const svgStats = {
         },
         mobile: {
           cx: '10%',
-          cy: '5%'
+          cy: '1%'
         }
       },
       color: "#87CEEB"
+    },
+    text: {
+      pos: {
+        regular: {
+          cx: '25%',
+          cy: '14%'
+        },
+        mobile: {
+          cx: '5%',
+          cy: '25%'
+        }
+      },
     }
   },
 
@@ -30,11 +42,23 @@ export const svgStats = {
           cy: '7%'
         },
         mobile: {
-          cx: '77%',
+          cx: '87%',
           cy: '-2%'
         }
       },
       color: "#90EE90"
+    },
+    text: {
+      pos: {
+        regular: {
+          cx: '72%',
+          cy: '14%'
+        },
+        mobile: {
+          cx: '87%',
+          cy: '15%'
+        }
+      },
     }
   },
 
@@ -53,7 +77,19 @@ export const svgStats = {
         cy: '65%'
       }
     },
-    color: "#F4D738"}
+    color: "#F4D738"},
+    text: {
+      pos: {
+        regular: {
+          cx: '25%',
+          cy: '80%'
+        },
+        mobile: {
+          cx: '25%',
+          cy: '70%'
+        }
+      },
+    }
   },
 
   br: {
@@ -71,13 +107,24 @@ export const svgStats = {
         cy: '85%'
       }
     },
-    color: "#FFB2EF"}
+    color: "#FFB2EF"},
+    text: {
+      pos: {
+        regular: {
+          cx: '80%',
+          cy: '80%'
+        },
+        mobile: {
+          cx: '75%',
+          cy: '80%'
+        }
+      },
+    }
   },
-
   active: {
     circle: {size: {
       regular: 250,
-      mobile: 150,
+      mobile: 120,
     },
     pos: {
       regular: {
@@ -86,6 +133,10 @@ export const svgStats = {
       }
     },
     color: "#FF7A5C"}
+  },
+  fontSize: {
+    regular: 40,
+    mobile: 20,
   },
 
 }
