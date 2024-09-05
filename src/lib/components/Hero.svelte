@@ -34,18 +34,11 @@
 
   $effect(() => {
     if(hero && !mouseInHero && activeCircleRadius) {
-
       const xStart = screenSize === 'regular' ? 0 + activeCircleRadius : 0 + Math.round(activeCircleRadius/1.75 + 0)
       const yStart = screenSize === 'regular' ? 0 + activeCircleRadius /2  : 0;
 
       const xEnd = screenSize === 'regular' ? hero.clientWidth - activeCircleRadius : hero.clientWidth - activeCircleRadius;
       const yEnd = screenSize === 'regular' ? hero.clientHeight - activeCircleRadius : hero.clientHeight - activeCircleRadius * 2;
-
-      console.log({
-        sectionHeight: hero?.clientHeight,
-        yStart,
-        yEnd
-      });
 
       let xInterp = gsap.utils.interpolate(xStart, xEnd)
       let xInterpReverse = gsap.utils.interpolate(xEnd, xStart)
