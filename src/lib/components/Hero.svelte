@@ -5,7 +5,7 @@
   let hero: HTMLElement | undefined = $state()
   let mouseX: number = $state(0)
   let mouseY: number = $state(0)
-  let mouseInHero: boolean = $state(true)
+  let mouseInHero: boolean = $state(false)
   let screenSize: keyof typeof svgStats.bl.circle.size = $derived(hero && hero.clientWidth > 800 ? 'regular' : 'mobile' || 'regular')
 
   let activeCircleRadius = $derived(svgStats.active.circle.size[screenSize])
@@ -35,10 +35,10 @@
   $effect(() => {
     if(hero && !mouseInHero && activeCircleRadius) {
       const xStart = screenSize === 'regular' ? 0 + activeCircleRadius : 0 + Math.round(activeCircleRadius/1.75 + 0)
-      const yStart = screenSize === 'regular' ? 0 + activeCircleRadius /2  : 0;
+      const yStart = screenSize === 'regular' ? 0 + activeCircleRadius / 2 : 0 + activeCircleRadius;
 
-      const xEnd = screenSize === 'regular' ? hero.clientWidth - activeCircleRadius : hero.clientWidth - activeCircleRadius;
-      const yEnd = screenSize === 'regular' ? hero.clientHeight - activeCircleRadius : hero.clientHeight - activeCircleRadius * 2;
+      const xEnd = screenSize === 'regular' ? hero.clientWidth - activeCircleRadius : hero.clientWidth - activeCircleRadius / 2;
+      const yEnd = screenSize === 'regular' ? hero.clientHeight - activeCircleRadius : hero.clientHeight - activeCircleRadius;
 
       let xInterp = gsap.utils.interpolate(xStart, xEnd)
       let xInterpReverse = gsap.utils.interpolate(xEnd, xStart)
@@ -152,48 +152,48 @@
     filter="url(#gooey)" />
 
     <!-- Top Left -->
-    <text class="font-black" x={svgStats.tl.text.pos[screenSize].cx} y={svgStats.tl.text.pos[screenSize].cy} fill="#000" font-size={svgStats.fontSize[screenSize]} mask="url(#reveal)" >
-      <tspan dy="1.2em" x="10" dx="1em">
+    <text class="font-black" x={svgStats.tl.text.pos[screenSize].x} y={svgStats.tl.text.pos[screenSize].y} fill="#000" font-size={svgStats.fontSize[screenSize]} mask="url(#reveal)" >
+      <tspan dy="1.2em" x={svgStats.tl.text.pos[screenSize].x} dx="1em">
         I'm a
       </tspan>
-      <tspan dy="1.2em" x="10" dx="1em">
+      <tspan dy="1.2em" x={svgStats.tl.text.pos[screenSize].x} dx="1em">
         Hockey Nerd
       </tspan>
     </text>
 
     <!-- Top Right -->
-    <text class="font-black" x={svgStats.tr.text.pos[screenSize].cx} y={svgStats.tr.text.pos[screenSize].cy} fill="#000" font-size={svgStats.fontSize[screenSize]} mask="url(#reveal)">
-      <tspan dy="1.2em" x="65%" dx="1em">
+    <text class="font-black" x={svgStats.tr.text.pos[screenSize].x} y={svgStats.tr.text.pos[screenSize].y} fill="#000" font-size={svgStats.fontSize[screenSize]} mask="url(#reveal)">
+      <tspan dy="1.2em" x={svgStats.tr.text.pos[screenSize].x} dx="1em">
         I'm a
       </tspan>
-      <tspan dy="1.2em" x="65%" dx="1em">
+      <tspan dy="1.2em" x={svgStats.tr.text.pos[screenSize].x} dx="1em">
         Filmmaker
       </tspan>
     </text>
 
     <!-- Bot Left -->
-    <text class="font-black z-10" x={svgStats.bl.text.pos[screenSize].cx} y={svgStats.bl.text.pos[screenSize].cy} fill="#000" font-size={svgStats.fontSize[screenSize]} mask="url(#reveal)">
-      <tspan dy="1.2em" x="10%" dx="1em">
+    <text class="font-black z-10" x={svgStats.bl.text.pos[screenSize].x} y={svgStats.bl.text.pos[screenSize].y} fill="#000" font-size={svgStats.fontSize[screenSize]} mask="url(#reveal)">
+      <tspan dy="1.2em" x={svgStats.bl.text.pos[screenSize].x} dx="1em">
         I'm an
       </tspan>
-      <tspan dy="1.2em" x="10%" dx="1em">
+      <tspan dy="1.2em" x={svgStats.bl.text.pos[screenSize].x} dx="1em">
         Amateur Chef
       </tspan>
     </text>
 
     <!-- Bot Right -->
-    <text class="font-black" x={svgStats.br.text.pos[screenSize].cx} y={svgStats.br.text.pos[screenSize].cy} fill="#000" font-size={svgStats.fontSize[screenSize]} mask="url(#reveal)">
-      <tspan dy="1.2em" x="75%" dx="1em">
+    <text class="font-black" x={svgStats.br.text.pos[screenSize].x} y={svgStats.br.text.pos[screenSize].y} fill="#000" font-size={svgStats.fontSize[screenSize]} mask="url(#reveal)">
+      <tspan dy="1.2em" x={svgStats.br.text.pos[screenSize].x} dx="1em">
         I'm a
       </tspan>
-      <tspan dy="1.2em" x="75%" dx="1em">
-        Hockey Nerd
+      <tspan dy="1.2em" x={svgStats.br.text.pos[screenSize].x} dx="1em">
+        Dog Person
       </tspan>
 
   </svg>
   
   <div class="main-header flex flex-col justify-center content-center text-center absolute">
-    <h1 class="text-4xl md:text-8xl font-bold ">Hi, I'm Tony Villa</h1>
+    <h1 class="text-4xl md:text-7xl font-bold ">Hi, I'm Tony Villa</h1>
     <h2 class="text-2xl md:text-5xl font-bold">I'm a Full Stack Engineer</h2>
   </div>
 

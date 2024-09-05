@@ -12,7 +12,7 @@ export const svgStats = {
         },
         mobile: {
           cx: '10%',
-          cy: '1%'
+          cy: '17%'
         }
       },
       color: "#87CEEB"
@@ -20,12 +20,12 @@ export const svgStats = {
     text: {
       pos: {
         regular: {
-          cx: '25%',
-          cy: '14%'
+          x: '3%',
+          y: '10%'
         },
         mobile: {
-          cx: '5%',
-          cy: '25%'
+          x: '0%',
+          y: '15%'
         }
       },
     }
@@ -43,7 +43,7 @@ export const svgStats = {
         },
         mobile: {
           cx: '87%',
-          cy: '-2%'
+          cy: '5%'
         }
       },
       color: "#90EE90"
@@ -51,12 +51,12 @@ export const svgStats = {
     text: {
       pos: {
         regular: {
-          cx: '72%',
-          cy: '14%'
+          x: '65%',
+          y: '14%'
         },
         mobile: {
-          cx: '87%',
-          cy: '15%'
+          x: '57%',
+          y: '9%'
         }
       },
     }
@@ -74,19 +74,19 @@ export const svgStats = {
       },
       mobile: {
         cx: '20%',
-        cy: '65%'
+        cy: '105%'
       }
     },
     color: "#F4D738"},
     text: {
       pos: {
         regular: {
-          cx: '25%',
-          cy: '80%'
+          x: '5%',
+          y: '70%'
         },
         mobile: {
-          cx: '25%',
-          cy: '70%'
+          x: '0%',
+          y: '80%'
         }
       },
     }
@@ -111,12 +111,12 @@ export const svgStats = {
     text: {
       pos: {
         regular: {
-          cx: '80%',
-          cy: '70%'
+          x: '70%',
+          y: '70%'
         },
         mobile: {
-          cx: '75%',
-          cy: '80%'
+          x: '55%',
+          y: '75%'
         }
       },
     }
