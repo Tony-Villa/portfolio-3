@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { svgStats } from "$lib/helpers/svgStats";
 	import gsap from "gsap";
+	import Card from "./Card.svelte";
 
   let hero: HTMLElement | undefined = $state()
   let mouseX: number = $state(0)
@@ -116,9 +117,10 @@
 </script>
     
 <!-- svelte-ignore a11y_no_static_element_interactions -->
+<Card>
 <section
   bind:this={hero} 
-  class="hero h-full w-full flex flex-col justify-center content-center border-2 border-[#FF7A5C] rounded-lg bg-[#F8EFD2]"
+  class="hero h-full w-full"
   onmousemove={getMouseCoords}
   onmouseenter={() => mouseInHero = true}
   onmouseleave={() => mouseInHero = false}
@@ -198,8 +200,9 @@
   </div>
 
   <!-- Drop shadow -->
-  <div class="brut-stripes-md md:brut-stripes-lg"></div>
+  <!-- <div class="brut-stripes-md md:brut-stripes-lg"></div> -->
 </section>
+</Card>
     
 <style lang="postcss">
   section {
