@@ -117,8 +117,8 @@
 </script>
     
 <!-- svelte-ignore a11y_no_static_element_interactions -->
-<Card>
-<section
+<Card variant="override">
+<div
   bind:this={hero} 
   class="hero h-full w-full"
   onmousemove={getMouseCoords}
@@ -201,7 +201,7 @@
 
   <!-- Drop shadow -->
   <!-- <div class="brut-stripes-md md:brut-stripes-lg"></div> -->
-</section>
+</div>
 </Card>
     
 <style lang="postcss">

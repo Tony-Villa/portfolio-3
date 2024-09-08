@@ -1,14 +1,34 @@
 <script>
-
+	import About from "$lib/components/About.svelte";
+	import Contact from "$lib/components/Contact.svelte";
+	import Experience from "$lib/components/Experience.svelte";
 	import Hero from "$lib/components/Hero.svelte";
+	import Projects from "$lib/components/Projects.svelte";
+	import Skills from "$lib/components/Skills.svelte";
 
 </script>
 
-<main class="h-dvh w-dvw px-5 py-2 md:px-20 md:py-10">
-  <div class="h-3/4">
+<div class="h-dvh w-dvw flex flex-col gap-20 px-5 py-2 md:px-20 md:py-10">
+  <section class="h-3/4 min-h-[75%]">
     <Hero />
-  </div>
-</main>
+  </section>
+  <section>
+    <About />
+  </section>
+  <section>
+    <Experience />
+  </section>
+  <section>
+    <Projects />
+  </section>
+  <section>
+    <Skills />
+  </section>
+  <section>
+    <Contact />
+  </section>
+  
+</div>
 
 <style>
   :global(html) {

@@ -4,7 +4,9 @@
   let {children} = $props()
 </script>
     
-{@render children()}
+<main class="h-dvh w-dvw">
+  {@render children()}
+</main>
     
 <style lang="postcss">
     
