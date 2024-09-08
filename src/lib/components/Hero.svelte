@@ -199,15 +199,10 @@
     <h2 class="text-2xl md:text-5xl font-bold">I'm a Full Stack Engineer</h2>
   </div>
 
-  <!-- Drop shadow -->
-  <!-- <div class="brut-stripes-md md:brut-stripes-lg"></div> -->
 </div>
 </Card>
     
 <style lang="postcss">
-  section {
-    position: relative;
-  }
   .main-header {
     position: absolute;
     top: 50%;
