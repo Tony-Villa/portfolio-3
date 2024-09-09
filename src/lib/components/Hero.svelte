@@ -127,6 +127,7 @@
 >
 
   <svg xmlns="http://www.w3.org/2000/svg" height={hero?.clientHeight} width={hero?.clientWidth} version="1.1">
+    
     <defs>
       <mask id="reveal">
         <circle id="mask-circle" cx={roamingCircle.x} cy={roamingCircle.y} r={activeCircleRadius} fill={colors.active} fill-opacity="1" />
