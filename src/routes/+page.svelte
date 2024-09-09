@@ -21,10 +21,10 @@
   <section>
     <Projects />
   </section>
-  <section>
+  <section class="min-h-[30%]">
     <Skills />
   </section>
-  <section>
+  <section class="min-h-[1000px]">
     <Contact />
   </section>
   
