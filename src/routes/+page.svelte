@@ -21,7 +21,7 @@
   <section>
     <Projects />
   </section>
-  <section class="min-h-[30%]">
+  <section class="min-h-[25%]">
     <Skills />
   </section>
   <section class="min-h-[1000px]">
