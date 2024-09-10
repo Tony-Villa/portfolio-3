@@ -25,7 +25,7 @@
     
 </script>
     
-<div class={`card relative h-full w-full flex flex-col justify-center content-center border-2 border-[#FF7A5C] rounded-lg bg-[#F8EFD2] ${className}  p-${variantStyles[variant].padding}`}>
+<div class={`card relative h-full w-full flex flex-col justify-center content-center border-2 border-[#FF7A5C] rounded-lg bg-[#F8EFD2] ${className} p-${variantStyles[variant].padding}`}>
 
   {@render children()}
 
