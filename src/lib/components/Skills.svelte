@@ -123,6 +123,9 @@
   })
 
 
+  let showViewbox = $derived(experience && experience?.clientWidth > 500 ? {viewBox: "0 0 1440 275"} : {})
+
+
 </script>
     
 <Card variant="sm" title="Skills" class="py-6">
@@ -131,7 +134,7 @@
     class="experience relative h-full w-full"
   >
 
-    <svg xmlns="http://www.w3.org/2000/svg" height={experience?.clientHeight} width={experience?.clientWidth} version="1.1">
+    <svg {...showViewbox} xmlns="http://www.w3.org/2000/svg" height=100% width=100% version="1.1">
 
       <defs>
         <g id="skills">
@@ -169,54 +172,71 @@
       href="#skills"
       filter="url(#gooey)"
       />
+
+      <!-- <g filter="url(#gooey)">
+        <circle id="skill-1"cx={skills.one.x + '%'} cy=20% r={skillRow[screenSize]?.size}  fill="#bbb001" />
+        <circle id="skill-2"cx={skills.two.x + '%'} cy=20% r={skillRow[screenSize]?.size} fill="#bbb001" />
+        <circle id="skill-3"cx={skills.three.x + '%'} cy=20% r={skillRow[screenSize]?.size} fill="#bbb001" />
+         <circle id="skill-4"cx={skills.four.x + '%'} cy=20% r={skillRow[screenSize]?.size} fill="#bbb001" />
+        <circle id="skill-5"cx={skills.five.x + '%'} cy=20% r={skillRow[screenSize]?.size} fill="#bbb001" />
+      </g> -->
       
       <g>
         <g opacity={skills.one.logoOpacity}>
-          <Javascript x={screenSize === 'regular' ? '7.8%' : '6%'} y=-30% width={skillRow[screenSize].size} />
-          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 6 : 2) +'%'} y=46%>Javascript</text>
+          <Javascript x={screenSize === 'regular' ? '8.3%' : '6%'} y=-30% width={skillRow[screenSize].size} />
+          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 7 : 2) +'%'} y=46%>Javascript</text>
         </g>
         <g opacity={skills.two.logoOpacity}>
-          <Html x={screenSize === 'regular' ? '27.8%' : '26%'} y=-30% width={skillRow[screenSize].size} />
-          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 28 : 26) +'%'} y=46%>Html</text>
+          <Html x={screenSize === 'regular' ? '28.3%' : '26%'} y=-30% width={skillRow[screenSize].size} />
+          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 28.5 : 26) +'%'} y=46%>Html</text>
         </g>
         <g opacity={skills.three.logoOpacity}>
-          <Css x={screenSize === 'regular' ? '47.8%' : '46%'} y=-30% width={skillRow[screenSize].size} />
-          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 48.5 : 46.5) +'%'}  y=46%>Css</text>
+          <Css x={screenSize === 'regular' ? '48.3%' : '46%'} y=-30% width={skillRow[screenSize].size} />
+          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 49 : 46.5) +'%'}  y=46%>Css</text>
         </g>
         <g opacity={skills.four.logoOpacity}>
-          <React x={screenSize === 'regular' ? '67.8%' : '66%'} y=-30% width={skillRow[screenSize].size} />
-          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 67.7 : 65.7) +'%'} y=46%>React</text>
+          <React x={screenSize === 'regular' ? '68.3%' : '66%'} y=-30% width={skillRow[screenSize].size} />
+          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 68.2 : 65.7) +'%'} y=46%>React</text>
         </g>
         <g opacity={skills.five.logoOpacity}>
-          <Svelte x={screenSize === 'regular' ? '87.8%' : '86%'} y=-30% width={skillRow[screenSize].size} />
-          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 87.7 : 85.2) +'%'} y=46%>Svelte</text>
+          <Svelte x={screenSize === 'regular' ? '88.3%' : '86%'} y=-30% width={skillRow[screenSize].size} />
+          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 88.2 : 85.2) +'%'} y=46%>Svelte</text>
         </g>
       </g>
       
       <g>
         <g opacity={bottomOpacity}>
-          <Node x={screenSize === 'regular' ? '7.8%' : '6%'} y=23% width={skillRow[screenSize].size} />
-          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 8.2 : 6.2) +'%'} y=99%>Node</text>
+          <Node x={screenSize === 'regular' ? '8.3%' : '6%'} y=23% width={skillRow[screenSize].size} />
+          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 8.5 : 6.2) +'%'} y=99%>Node</text>
         </g>1
         <g opacity={bottomOpacity}>
-          <Tailwind x={screenSize === 'regular' ? '27.8%' : '26%'} y=23% width={skillRow[screenSize].size} />
-          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 27.2 : 23) +'%'} y=99%>Tailwind</text>
+          <Tailwind x={screenSize === 'regular' ? '28.3%' : '26%'} y=23% width={skillRow[screenSize].size} />
+          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 27.7 : 23) +'%'} y=99%>Tailwind</text>
         </g>
         <g opacity={bottomOpacity}>
-          <PostgreSql x={screenSize === 'regular' ? '47.8%' : '46%'} y=23% width={skillRow[screenSize].size} />
-          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 46.5 : 42) +'%'} y=99%>PostgreSql</text>
+          <PostgreSql x={screenSize === 'regular' ? '48.3%' : '46%'} y=23% width={skillRow[screenSize].size} />
+          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 47 : 42) +'%'} y=99%>PostgreSql</text>
         </g>
         <g opacity={bottomOpacity}>
-          <Sqlite x={screenSize === 'regular' ? '67.8%' : '66%'} y=23% width={skillRow[screenSize].size} />
-          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 67.5 : 65) +'%'} y=99%>SQLite</text>
+          <Sqlite x={screenSize === 'regular' ? '68.3%' : '66%'} y=23% width={skillRow[screenSize].size} />
+          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 68.2 : 65) +'%'} y=99%>SQLite</text>
         </g>
         <g opacity={bottomOpacity}>
-          <Graphql x={screenSize === 'regular' ? '87.8%' : '86%'} y=23% width={skillRow[screenSize].size} />
-          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 87 : 82) +'%'} y=99%>GraphQL</text>
+          <Graphql x={screenSize === 'regular' ? '88.3%' : '86%'} y=23% width={skillRow[screenSize].size} />
+          <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 87.5 : 82) +'%'} y=99%>GraphQL</text>
         </g>
       </g>
 
     </svg>
+
+
+<!-- Try to center icons to each circle without it being grouped -->
+    <!-- <svg class="absolute top-0" xmlns="http://www.w3.org/2000/svg" height=100% width=100% version="1.1">
+      <g class="absolute" opacity={1}>
+        <Javascript x={skills.one.x + '%'} y=0% width={skillRow[screenSize].size} />
+        <text class="font-black" font-size={screenSize === 'regular' ? 15 : 10} x={(screenSize === 'regular' ? 6 : 2) +'%'} y=46%>Javascript</text>
+      </g>
+    </svg> -->
 
   </div>
 </Card>
