@@ -16,13 +16,13 @@
     <About />
   </section>
   <section>
-    <Experience />
-  </section>
-  <section>
     <Projects />
   </section>
   <section class="min-h-[25%]">
     <Skills />
+  </section>
+  <section>
+    <Experience />
   </section>
   <section class="min-h-[1000px]">
     <Contact />
