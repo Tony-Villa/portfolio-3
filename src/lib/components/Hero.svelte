@@ -7,7 +7,7 @@
   let mouseX: number = $state(0)
   let mouseY: number = $state(0)
   let mouseInHero: boolean = $state(false)
-  let screenSize: keyof typeof svgStats.bl.circle.size = $derived(hero && hero.clientWidth > 800 ? 'regular' : 'mobile' || 'regular')
+  let screenSize: keyof typeof svgStats.bl.circle.size = $derived(hero && hero.clientWidth > 450 ? 'regular' : 'mobile' )
 
   let activeCircleRadius = $derived(svgStats.active.circle.size[screenSize])
 
