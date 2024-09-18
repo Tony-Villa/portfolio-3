@@ -123,7 +123,7 @@
   })
 
 
-  let showViewbox = $derived(experience && experience?.clientWidth > 500 ? {viewBox: "0 0 1440 275"} : {})
+  let showViewbox = $derived(experience && experience?.clientWidth > 400 ? {viewBox: "0 0 1440 275"} : {})
 
 
 </script>
