@@ -5,7 +5,6 @@
 	import Hero from "$lib/components/Hero.svelte";
 	import Projects from "$lib/components/Projects.svelte";
 	import Skills from "$lib/components/Skills.svelte";
-	import Navbar from "$lib/components/navbar/Navbar.svelte";
 
 </script>
 
