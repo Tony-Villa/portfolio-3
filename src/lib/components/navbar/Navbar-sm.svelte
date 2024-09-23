@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { scrollIntoView } from "$lib/helpers/scroll-to-view";
 	import Hamburger from "../icons/hamburger.svelte";
+	import Github from "../skills/github.svelte";
+	import Linkedin from "../skills/linkedin.svelte";
 
   let isHamburgerOpen: boolean = false;
 
@@ -23,6 +25,9 @@
       <li><a href="#skills-section" on:click|preventDefault={scrollIntoView}>Skills</a></li>
       <li><a href="#experience" on:click|preventDefault={scrollIntoView}>Experience</a></li>
       <li><a href="#contact" on:click|preventDefault={scrollIntoView}>Contact</a></li>
+      <li><a href="https://github.com/Tony-Villa"> <Github width={30} /> </a></li>
+      <li>
+      <a href="https://www.linkedin.com/in/tony-villa-dev/"> <Linkedin width={30} /> </a></li>
     </ul>
    </div>
 </nav>

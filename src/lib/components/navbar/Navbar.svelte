@@ -1,14 +1,24 @@
 <script lang="ts">
 	import { scrollIntoView } from "$lib/helpers/scroll-to-view";
+	import Github from "../skills/github.svelte";
+	import Linkedin from "../skills/linkedin.svelte";
   
 </script>
-    
-<nav class="py-5 w-full flex justify-center gap-8 text-lg font-bold">
-  <a href="#about" on:click|preventDefault={scrollIntoView}>About</a>
-  <a href="#projects" on:click|preventDefault={scrollIntoView}>Projects</a>
-  <a href="#skills-section" on:click|preventDefault={scrollIntoView}>Skills</a>
-  <a href="#experience" on:click|preventDefault={scrollIntoView}>Experience</a>
-  <a href="#contact" on:click|preventDefault={scrollIntoView}>Contact</a>
+
+<nav class="py-5 w-full flex justify-center text-lg font-bold">
+  <div class="flex gap-8 justify-center justify-self-center">
+    <a href="#about" on:click|preventDefault={scrollIntoView}>About</a>
+    <a href="#projects" on:click|preventDefault={scrollIntoView}>Projects</a>
+    <a href="#skills-section" on:click|preventDefault={scrollIntoView}>Skills</a>
+    <a href="#experience" on:click|preventDefault={scrollIntoView}>Experience</a>
+    <a href="#contact" on:click|preventDefault={scrollIntoView}>Contact</a>
+    <a href="https://github.com/Tony-Villa"> <Github width={30} /> </a>
+    <a href="https://www.linkedin.com/in/tony-villa-dev/"> <Linkedin width={30} /> </a>
+  </div>
+
+
+  <!-- <div class="flex gap-8 justify-self-end items-center"> -->
+  <!-- </div> -->
 </nav>
     
 <style lang="postcss">
