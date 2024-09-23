@@ -21,10 +21,5 @@ export const actions: Actions = {
       method: 'POST',
       body: JSON.stringify(embedContact),
     })
-
-
-    // sendContactFormEmbed(embedContact)
-
-
   }
 };
