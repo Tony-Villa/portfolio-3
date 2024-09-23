@@ -24,7 +24,7 @@
     <section id="experience" class="page-sec">
       <Experience />
     </section>
-    <section id="contact" class="page-sec min-h-[1000px]">
+    <section id="contact" class="page-sec pb-20">
       <Contact />
     </section>
     
