@@ -12,7 +12,7 @@ import "../app.css"
 </svelte:head>
 <svelte:window bind:innerWidth />
     
-<main class="h-dvh w-dvw">
+<div class="h-dvh w-dvw">
   {#if innerWidth < 768}
 		<Navbar.Small />
 	{:else}
@@ -20,7 +20,7 @@ import "../app.css"
 	{/if}
   
   {@render children()}
-</main>
+</div>
     
 <style lang="postcss">
     
