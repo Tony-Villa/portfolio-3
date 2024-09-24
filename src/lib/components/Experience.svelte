@@ -6,7 +6,10 @@
 <Card variant="sm" title="Experience">
   <div class="flex flex-col gap-10">
     <div class="software-engineer flex flex-col gap-3">
-      <h3 class="text-2xl font-bold">WayBetter - Software Engineer</h3>
+      <div class="flex flex-col gap-0">
+        <h3 class="text-2xl font-bold">WayBetter - Software Engineer</h3>
+        <p class="text-sm">April 2022 - PRESENT</p>
+      </div>
       <ul class="text-xl list-disc list-inside flex flex-col gap-1">
         <li>Collaborated with the data/analytics team to develop an algorithm that improved prospect user targeting, resulting in a 13% increase in conversion rates</li>
         <li> Spearheaded initiatives to raise customer engagement through UI enhancements, leading to a 25% decrease in cancellation rates</li>
@@ -16,7 +19,10 @@
     </div>
   
     <div class="assoc-software-engineer flex flex-col gap-3">
-      <h3 class="text-2xl font-bold">WayBetter - Associate Software Engineer</h3>
+      <div class="flex flex-col gap-0">
+        <h3 class="text-2xl font-bold">WayBetter - Associate Software Engineer</h3>
+        <p class="text-sm">April 2021 -April 2022</p>
+      </div>
       <ul class="text-xl list-disc list-inside flex flex-col gap-1">
         <li>Implemented a component library, streamlining the development process for new features and reducing development time</li>
         <li>Maintained quiz backend that made it easy to quickly iterate on the top of the funnel</li>
