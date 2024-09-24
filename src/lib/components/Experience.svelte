@@ -21,7 +21,7 @@
     <div class="assoc-software-engineer flex flex-col gap-3">
       <div class="flex flex-col gap-0">
         <h3 class="text-2xl font-bold">WayBetter - Associate Software Engineer</h3>
-        <p class="text-sm">April 2021 -April 2022</p>
+        <p class="text-sm">April 2021 - April 2022</p>
       </div>
       <ul class="text-xl list-disc list-inside flex flex-col gap-1">
         <li>Implemented a component library, streamlining the development process for new features and reducing development time</li>
