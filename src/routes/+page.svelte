@@ -15,14 +15,14 @@
     <section id="about" class="page-sec">
       <About />
     </section>
-    <section id="projects" class="page-sec">
-      <Projects />
+    <section id="experience" class="page-sec">
+      <Experience />
     </section>
     <section id="skills-section" class="page-sec min-h-[25%]">
       <Skills />
     </section>
-    <section id="experience" class="page-sec">
-      <Experience />
+    <section id="projects" class="page-sec">
+      <Projects />
     </section>
     <section id="contact" class="page-sec pb-20">
       <Contact />
