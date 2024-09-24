@@ -9,14 +9,11 @@
   let innerHeight = $state(0)
   let innerWidth = $state(0)
 
-  $inspect(innerHeight)
-
-
   let heroSectionHeight = $derived.by(() => {
       if(innerWidth < 500) {
         return 'min-h-[75%]'
-      } else if(innerHeight < 1000) {
-        return 'min-h-full'
+      } else if(innerHeight < 1130) {
+        return 'min-h-[90%]'
       } else {
         return 'min-h-[75%]'
       }
