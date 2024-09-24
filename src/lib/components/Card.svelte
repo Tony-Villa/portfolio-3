@@ -22,10 +22,12 @@
       padding: 0
     },
   }
+
+  let padding = variant ? `p-${variantStyles[variant].padding}` : 'p-4'
     
 </script>
     
-<div class={`card relative h-full w-full flex flex-col justify-center content-center border-2 border-[#FF7A5C] rounded-lg bg-[#F8EFD2] p-4 ${className}`}>
+<div class={`card relative h-full w-full flex flex-col justify-center content-center border-2 border-[#FF7A5C] rounded-lg bg-[#F8EFD2] ${padding} ${className}`}>
 
   {@render children()}
 
