@@ -12,8 +12,11 @@
 </script>
     
 <Card variant="sm" title="Projects">
-  <div class="flex justify-center mb-5">
-    <p class="text-lg text-center">I am passionate about coding, both professionally and in my free time. This section showcases my latest side project. <br/>If you'd like to see some of my other side projects feel free to browse around my github repos: <a class="inline-block" href="https://github.com/Tony-Villa" target="_blank"><Github width={25} /></a> </p>
+  <div class="flex flex-col text-lg text-center justify-center mb-5">
+    <p class="">I am passionate about coding, both professionally and in my free time. This section showcases my latest side project.</p>
+    <p>
+      To see more of my side projects feel free to browse around my <a class="inline-block gap-2 text-[#FF7A5C] text-lg underline" href="https://github.com/Tony-Villa" target="_blank"> github repos</a>
+    </p>
   </div>
 
   <!-- <p>and what I’m currently working on.</p> -->
