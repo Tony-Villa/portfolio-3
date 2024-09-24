@@ -6,10 +6,16 @@
 	import Projects from "$lib/components/Projects.svelte";
 	import Skills from "$lib/components/Skills.svelte";
 
+  let innerHeight = $state(0)
+
+  $inspect(innerHeight)
+
 </script>
 
+  <svelte:window bind:innerHeight />
+
   <div class="h-dvh flex flex-col gap-20 px-5 py-2 md:px-20 md:py-10">
-    <section class="page-sec h-3/4 min-h-[75%]">
+    <section class={`page-sec h-3/4  ${innerHeight < 1000 ? 'min-h-full' : 'min-h-[75%]'}`}>
       <Hero />
     </section>
     <section id="about" class="page-sec">
@@ -18,7 +24,7 @@
     <section id="experience" class="page-sec">
       <Experience />
     </section>
-    <section id="skills-section" class="page-sec min-h-[25%]">
+    <section id="skills-section" class={`page-sec ${innerHeight < 1000 ? 'min-h-[50%]' : 'min-h-[25%]'}`}>
       <Skills />
     </section>
     <section id="projects" class="page-sec">
