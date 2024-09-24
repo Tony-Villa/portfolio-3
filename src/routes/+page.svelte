@@ -7,12 +7,27 @@
 	import Skills from "$lib/components/Skills.svelte";
 
   let innerHeight = $state(0)
+  let innerWidth = $state(0)
 
   $inspect(innerHeight)
 
+
+  let skillsSectionHeight = $derived.by(() => {
+      if(innerWidth < 500) {
+        return 'min-h-[30%]'
+      } else if(innerHeight < 1000) {
+        return 'min-h-[50%]'
+      } else {
+        return 'min-h-[25%]'
+      }
+    }
+  )
+
+  $inspect(skillsSectionHeight)
+
 </script>
 
-  <svelte:window bind:innerHeight />
+  <svelte:window bind:innerHeight bind:innerWidth />
 
   <div class="h-dvh flex flex-col gap-20 px-5 py-2 md:px-20 md:py-10">
     <section class={`page-sec h-3/4  ${innerHeight < 1000 ? 'min-h-full' : 'min-h-[75%]'}`}>
@@ -24,7 +39,7 @@
     <section id="experience" class="page-sec">
       <Experience />
     </section>
-    <section id="skills-section" class={`page-sec ${innerHeight < 1000 ? 'min-h-[50%]' : 'min-h-[25%]'}`}>
+    <section id="skills-section" class={`page-sec ${skillsSectionHeight}`}>
       <Skills />
     </section>
     <section id="projects" class="page-sec">
