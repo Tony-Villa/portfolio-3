@@ -38,8 +38,8 @@
   </div>
 
   <form method="POST" action="?/contactForm" class="flex flex-col gap-4 items-center justify-center">
-    <SimpleInput name='name' label="Name" />
-    <SimpleInput name='email' label="Email" />
+    <SimpleInput name='name' label="Name" required />
+    <SimpleInput name='email' label="Email" required />
     <SimpleInput name='company' label="Company" />
 
     <div class={inputContainerStyles}>
