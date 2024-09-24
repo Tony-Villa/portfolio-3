@@ -13,7 +13,7 @@
     
 <Card variant="sm" title="Projects">
   <div class="flex flex-col text-lg text-center justify-center mb-5">
-    <p>I am passionate about coding, both professionally and in my free time. This section showcases my latest side project. TESTING WEBHOOK!</p>
+    <p>I am passionate about coding, both professionally and in my free time. This section showcases my latest side project.</p>
     <p>
       To see more of my side projects feel free to browse around my <a class="inline-block gap-2 text-[#FF7A5C] text-lg underline" href="https://github.com/Tony-Villa" target="_blank"> github repos</a>
     </p>
