@@ -12,6 +12,16 @@
   $inspect(innerHeight)
 
 
+  let heroSectionHeight = $derived.by(() => {
+      if(innerWidth < 500) {
+        return 'min-h-[75%]'
+      } else if(innerHeight < 1000) {
+        return 'min-h-full'
+      } else {
+        return 'min-h-[75%]'
+      }
+    }
+  )
   let skillsSectionHeight = $derived.by(() => {
       if(innerWidth < 500) {
         return 'min-h-[30%]'
@@ -28,7 +38,7 @@
   <svelte:window bind:innerHeight bind:innerWidth />
 
   <div class="h-dvh flex flex-col gap-20 px-5 py-2 md:px-20 md:py-10">
-    <section class={`page-sec h-3/4  ${innerHeight < 1000 ? 'min-h-full' : 'min-h-[75%]'}`}>
+    <section class={`page-sec h-3/4  ${heroSectionHeight}`}>
       <Hero />
     </section>
     <section id="about" class="page-sec">
