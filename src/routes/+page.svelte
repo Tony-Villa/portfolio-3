@@ -23,8 +23,6 @@
     }
   )
 
-  $inspect(skillsSectionHeight)
-
 </script>
 
   <svelte:window bind:innerHeight bind:innerWidth />
