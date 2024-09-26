@@ -9,14 +9,16 @@
   let mouseInHero: boolean = $state(false)
   let screenSize: keyof typeof svgStats.bl.circle.size = $derived(hero && hero.clientWidth > 450 ? 'regular' : 'mobile' )
 
+  
+
   let activeCircleRadius = $derived(svgStats.active.circle.size[screenSize])
 
   let autoCircleX: number = $state(0 + activeCircleRadius);
   let autoCircleY: number = $state(0 + Math.round(activeCircleRadius / 3));
 
   let roamingCircle = $derived({
-    x: mouseInHero ? mouseX - 75 : autoCircleX,
-    y: mouseInHero ? mouseY - 50    : autoCircleY,
+    x: mouseInHero ? mouseX : autoCircleX,
+    y: mouseInHero ? mouseY : autoCircleY,
   })
 
   let colors = {
@@ -27,11 +29,16 @@
     active: "#FF7A5C",
   }
 
-  
+
+
   function getMouseCoords(e: MouseEvent) {
-    mouseX = e.clientX
-    mouseY = e.clientY
+    const bounds = hero?.getBoundingClientRect();
+    if(!bounds) return;
+    mouseX = e.clientX  - bounds.x
+    mouseY = e.clientY - bounds.y
   }
+
+
 
   $effect(() => {
     if(hero && !mouseInHero && activeCircleRadius) {
@@ -198,6 +205,7 @@
   <div class="main-header flex flex-col justify-center content-center text-center absolute">
     <h1 class="text-4xl md:text-7xl font-bold ">Hi, I'm Tony Villa</h1>
     <h2 class="text-2xl md:text-5xl font-bold">I'm a Full Stack Engineer</h2>
+    <h3 class="text-xl md:text-3xl font-bold">Based in Los Angeles</h3>
   </div>
 
 </div>
