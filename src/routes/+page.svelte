@@ -34,8 +34,8 @@
 
   <svelte:window bind:innerHeight bind:innerWidth />
 
-  <div class="h-dvh flex flex-col gap-20 px-5 py-2 md:px-20 md:py-10">
-    <section class={`page-sec h-3/4  ${heroSectionHeight}`}>
+  <div class="h-dvh flex flex-col mx-auto max-w-[1440px] gap-20 px-5 py-2 md:px-20 md:py-10">
+    <section class={`page-sec w-full h-3/4 ${heroSectionHeight}`}>
       <Hero />
     </section>
     <section id="about" class="page-sec">
