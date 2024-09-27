@@ -6,7 +6,7 @@
 <Card variant="sm" title="About">
   <div class="flex flex-col text-xl gap-5">
     <p>
-      I'm a full-stack developer with a passion for creating intuitive front-end experiences. When I’m not coding professionally, you’ll find me ... coding recreationally.
+      I'm a full-stack developer speacializing in creating intuitive front-end experiences. When I’m not coding professionally, you’ll find me ... coding recreationally.
     </p>
 
     <p>
