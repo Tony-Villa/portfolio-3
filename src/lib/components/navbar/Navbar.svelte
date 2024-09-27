@@ -7,15 +7,30 @@
 </script>
 
 <nav class="py-5 w-full flex justify-center text-lg font-bold">
-  <div class="flex gap-8 justify-center justify-self-center">
+  <div class="flex gap-8 justify-center items-center justify-self-center">
     <a href="#about" on:click|preventDefault={scrollIntoView}>About</a>
     <a href="#projects" on:click|preventDefault={scrollIntoView}>Projects</a>
     <a href="#skills-section" on:click|preventDefault={scrollIntoView}>Skills</a>
     <a href="#experience" on:click|preventDefault={scrollIntoView}>Experience</a>
     <a href="#contact" on:click|preventDefault={scrollIntoView}>Contact</a>
-    <a href="https://github.com/Tony-Villa" target="_blank"> <Github width={30} /> </a>
-    <a href="https://www.linkedin.com/in/tony-villa-dev/" target="_blank"> <Linkedin width={30} /> </a>
-    <a href="/tony_villa_resume.pdf" target="_blank"> <Pdf width={30} /> </a>
+    <a href="https://github.com/Tony-Villa" target="_blank"> 
+      <div class="flex flex-col gap-0 items-center text-sm font-normal">
+        <Github width={30} />
+        <p>Github</p>
+      </div>
+     </a>
+    <a href="https://www.linkedin.com/in/tony-villa-dev/" target="_blank">
+      <div class="flex flex-col gap-0 items-center text-sm font-normal">
+        <Linkedin width={30} />
+        <p>LinkedIn</p>
+      </div>
+     </a>
+    <a href="/tony_villa_resume.pdf" target="_blank"> 
+      <div class="flex flex-col gap-0 items-center text-sm font-normal">
+        <Pdf width={30} />
+        <p>Resume</p>
+      </div>
+     </a>
   </div>
 
 

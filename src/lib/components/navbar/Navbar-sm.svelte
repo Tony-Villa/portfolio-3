@@ -3,6 +3,7 @@
 	import Hamburger from "../icons/hamburger.svelte";
 	import Github from "../skills/github.svelte";
 	import Linkedin from "../skills/linkedin.svelte";
+	import Pdf from "../skills/pdf.svelte";
 
   let isHamburgerOpen: boolean = false;
 
@@ -24,10 +25,30 @@
       <li><a href="#projects" on:click|preventDefault={scrollIntoView}>Projects</a></li>
       <li><a href="#skills-section" on:click|preventDefault={scrollIntoView}>Skills</a></li>
       <li><a href="#experience" on:click|preventDefault={scrollIntoView}>Experience</a></li>
-      <li><a href="#contact" on:click|preventDefault={scrollIntoView}>Contact</a></li>
-      <li><a href="https://github.com/Tony-Villa"> <Github width={30} /> </a></li>
       <li>
-      <a href="https://www.linkedin.com/in/tony-villa-dev/"> <Linkedin width={30} /> </a></li>
+        <a href="https://github.com/Tony-Villa" target="_blank"> 
+          <div class="flex flex-col gap-0 items-center text-sm font-normal">
+            <Github width={30} />
+            <p>Github</p>
+          </div>
+         </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/tony-villa-dev/" target="_blank">
+        <div class="flex flex-col gap-0 items-center text-sm font-normal">
+          <Linkedin width={30} />
+          <p>LinkedIn</p>
+        </div>
+       </a>
+      </li>
+      <li>
+        <a href="/tony_villa_resume.pdf" target="_blank"> 
+          <div class="flex flex-col gap-0 items-center text-sm font-normal">
+            <Pdf width={30} />
+            <p>Resume</p>
+          </div>
+         </a>
+      </li>
     </ul>
    </div>
 </nav>
