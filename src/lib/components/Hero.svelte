@@ -205,7 +205,7 @@
   <div class="main-header flex flex-col justify-center content-center text-center absolute">
     <h1 class="text-4xl md:text-7xl font-bold ">Hi, I'm Tony Villa</h1>
     <h2 class="text-2xl md:text-5xl font-bold">I'm a Full Stack Engineer</h2>
-    <h3 class="text-xl md:text-3xl font-bold">Based in Los Angeles</h3>
+    <h3 class="text-md md:text-3xl font-bold">Based in Los Angeles</h3>
   </div>
 
 </div>
