@@ -66,7 +66,7 @@
            Services
           </p>
           <p>
-            I built a few services both for need and also for redudancies. All services were built using Go.
+            I built a few services both for need and also for redundancies. All services were built using Go.
             Services included: WebSocket, Scraper, and some long running workers pinging different services and websites to alert me if any became unhealthy.
           </p>
         </div>
