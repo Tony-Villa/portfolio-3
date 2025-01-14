@@ -6,11 +6,11 @@
 <Card variant="sm" title="About">
   <div class="flex flex-col text-xl gap-5">
     <p>
-      I'm a full-stack developer specializing in creating intuitive front-end experiences. When I’m not coding professionally, you’ll find me ... coding recreationally.
+      I'm a full-stack software engineer specializing in creating intuitive front-end experiences. When I’m not coding professionally, you’ll find me ... coding recreationally.
     </p>
 
     <p>
-      Before I became a developer, I spent years working as a filmmaker where I honed my skills in collaboration, while being a part of a variety of cross functional teams. That same collaborative spirit translates perfectly into software development, where I thrive in environments that bring designers, engineers, and stakeholders together to solve problems as a team.
+      Before I became a software engineer, I spent years working as a filmmaker where I honed my skills in collaboration, while being a part of a variety of cross functional teams. That same collaborative spirit translates perfectly into software development, where I thrive in environments that bring designers, engineers, and stakeholders together to solve problems as a team.
     </p>
 
     <p>
