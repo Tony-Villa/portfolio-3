@@ -9,6 +9,19 @@ export const actions: Actions = {
     const email = data.get('email')
     const company = data.get('company')
     const content = data.get('content')
+
+    if (!name || !email || !company || !content) {
+      return {
+        status: 400,
+        body: { error: 'All fields are required.' }
+      };
+    }
+
+    if (name.toString().includes('Eric Jones')) {
+      return {
+        status: 400,
+      };
+    }
     
 
     const embedContact = {
