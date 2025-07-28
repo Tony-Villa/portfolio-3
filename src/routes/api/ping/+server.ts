@@ -7,13 +7,15 @@ export const GET: RequestHandler = async ({ request, getClientAddress }) => {
   // Get additional IP info from headers if available
   const forwardedFor = request.headers.get('x-forwarded-for');
   const realIP = request.headers.get('x-real-ip');
+  const userAgent = request.headers.get('user-agent');
+  
+  // Log the connection details
+  console.log(`[${timestamp}] Ping request from IP: ${clientIP}`);
+  console.log(`  - Forwarded For: ${forwardedFor || 'N/A'}`);
+  console.log(`  - Real IP: ${realIP || 'N/A'}`);
+  console.log(`  - User Agent: ${userAgent || 'N/A'}`);
   
   return json({
-    message: 'pong',
-    ip: clientIP,
-    forwardedFor: forwardedFor || null,
-    realIP: realIP || null,
-    timestamp,
-    userAgent: request.headers.get('user-agent') || null
+    message: 'pong'
   });
 };
