@@ -22,6 +22,26 @@ export const actions: Actions = {
         status: 400,
       };
     }
+
+    if(name.toString() === company.toString()) {
+      return {
+        status: 400,
+      }
+    }
+
+    const emailAccountsToIgnore = [
+      '@gmail.com',
+      '@yahoo.com',
+      '@hotmail.com',
+      '@outlook.com',
+      '@icloud.com',
+    ]
+
+    if (emailAccountsToIgnore.some(account => email.toString().includes(account))) {
+      return {
+        status: 400,
+      };
+    }
     
 
     const embedContact = {
